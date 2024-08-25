@@ -24,6 +24,25 @@ const WrapperComponent = (factor: string) => {
 const RowCenter = WrapperComponent("flex-row");
 const ColCenter = WrapperComponent("flex-col");
 
+function RowEnd({ children, className, tagName = "div" }: Props) {
+  return createElement(
+    tagName,
+    { className: `flex justify-end  ${className}` },
+    children,
+  );
+}
+
+function ColEnd({ children, className, tagName = "div" }: Props) {
+  return createElement(
+    tagName,
+    { className: `flex flex-col items-end ${className}` },
+    children,
+  );
+}
+
+// const RowEnd = WrapperComponent("justify-end");
+// const ColEnd = WrapperComponent("flex-col justify-end");
+
 /**
  *  
   필요한 tailwindcss 클래스를 추가하면 됩니다.
@@ -32,4 +51,4 @@ const ColCenter = WrapperComponent("flex-col");
   const RowEndCenter = WrapperComponent("flex-row justify-end");
  */
 
-export const Flex = { RowCenter, ColCenter };
+export const Flex = { RowCenter, ColCenter, RowEnd, ColEnd };
