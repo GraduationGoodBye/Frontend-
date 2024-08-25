@@ -6,15 +6,16 @@ interface Props {
   children?: React.ReactNode;
   tagName?: TagName;
   gap?: number;
+  className?: string;
 }
 
 const FLEX_DEFAULT_STYLE = "flex w-full items-center justify-center";
 
 const WrapperComponent = (factor: string) => {
-  return ({ children, tagName = "div", gap = 0 }: Props) => {
+  return ({ children, tagName = "div", gap = 0, className = "" }: Props) => {
     return createElement(
       tagName,
-      { className: `${FLEX_DEFAULT_STYLE} gap-${gap} ${factor}` },
+      { className: `${FLEX_DEFAULT_STYLE} gap-${gap} ${factor} ${className}` },
       children,
     );
   };
