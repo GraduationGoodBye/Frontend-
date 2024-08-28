@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Flex } from "../../shared/ui";
-import { Icon } from "../../shared/icon/icon";
+import { Flex } from "../../../shared/ui";
+import { Icon } from "../../../shared/icon/icon";
 import Image from "next/image";
 
 type snsTypes = "google" | "naver" | "kakao";
@@ -35,7 +35,7 @@ const LoginButtons = () => {
         />
       </button>
       <button
-        className="flex h-[78px] w-[366px] items-center justify-around gap-4 rounded-lg bg-[#FEE500] p-4 text-2xl"
+        className="flex h-[78px] w-[366px] items-center justify-center gap-4 rounded-lg bg-[#FEE500] p-4 text-2xl"
         onClick={() => {
           handleLogin("kakao");
         }}
