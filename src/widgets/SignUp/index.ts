@@ -1,1 +1,1 @@
-export { default as FormContainer } from "./ui/FormContainer";
+export { default as FormContainer } from "./FormContainer";
