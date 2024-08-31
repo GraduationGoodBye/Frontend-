@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Icon } from "../shared/icon/icon";
+import Signup from "./signup";
 
 export default function Home() {
-  return <Icon.Default />;
+  return <Signup />;
 }
