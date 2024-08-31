@@ -77,7 +77,7 @@ export default function FormContainer() {
             <Input {...{ nickname, onChangeHandler }} />
             <p>{isValid ? "사용 가능" : "사용 불가능"}</p>
 
-            <Flex.ColEnd className="w-full gap-[4px]">
+            <Flex.ColEnd>
               <CheckInput
                 text="(필수) 이용약관 전체동의"
                 id={"이용약관"}
@@ -91,7 +91,7 @@ export default function FormContainer() {
                 handleClick={onMarketingChecked}
               />
             </Flex.ColEnd>
-            <Flex.ColEnd className="w-full">
+            <Flex.ColEnd>
               <ConfirmButton />
             </Flex.ColEnd>
           </Flex.ColCenter>
