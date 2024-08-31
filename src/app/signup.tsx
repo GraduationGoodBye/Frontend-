@@ -21,8 +21,8 @@ Pinterest의 글로벌 개인정보 보호정책입니다. 아래에 사용자�
 
 function Terms({ heading, content }: Props) {
   return (
-    <div className="bg-background_light h-[274px] w-[770px] gap-2 p-[16px]">
-      <h3 className="font-super mb-[30px] text-[16px]">{heading}</h3>
+    <div className="h-[274px] w-[770px] gap-2 bg-background_light p-[16px]">
+      <h3 className="mb-[30px] font-super text-[16px]">{heading}</h3>
       <p className="text-[12px]">{content}</p>
     </div>
   );
@@ -30,22 +30,23 @@ function Terms({ heading, content }: Props) {
 
 function SignFormContainer() {
   return (
-    <Flex.ColCenter className="bg-background_grey h-[760px] w-[840px] pt-[205px]">
+    <div className="h-[760px] w-[840px] bg-background_grey pt-[205px]">
       <Flex.ColCenter className="w-[584px] gap-[95px]">
         <SignTitle />
-        <Flex.ColCenter className="gap-[60px]">
-          <SignInputBox />
-
-          <Flex.ColEnd className="w-full gap-[4px]">
-            <SignCheckInput text="(필수) 이용약관 전체동의" id={"이용약관"} />
-            <SignCheckInput text="(선택) 마케팅 수신 동의" id={"마케팅"} />
-          </Flex.ColEnd>
-          <Flex.ColEnd className="w-full">
-            <SignConfirmButton />
-          </Flex.ColEnd>
-        </Flex.ColCenter>
+        <div className="w-[584px]">
+          <Flex.ColCenter className="gap-[60px]">
+            <SignInputBox />
+            <Flex.ColEnd className="w-full gap-[4px]">
+              <SignCheckInput text="(필수) 이용약관 전체동의" id={"이용약관"} />
+              <SignCheckInput text="(선택) 마케팅 수신 동의" id={"마케팅"} />
+            </Flex.ColEnd>
+            <Flex.ColEnd className="w-full">
+              <SignConfirmButton />
+            </Flex.ColEnd>
+          </Flex.ColCenter>
+        </div>
       </Flex.ColCenter>
-    </Flex.ColCenter>
+    </div>
   );
 }
 
@@ -59,14 +60,16 @@ function SignTitle() {
 
 function SignInputBox() {
   return (
-    <Flex.RowCenter className="h-[90px] w-[584px] gap-3 bg-white p-[12px]">
-      <p className="font-black">@</p>
-      <input
-        type="text"
-        className="flex-1 text-[24px] font-light"
-        placeholder="입력해주세요..."
-      />
-    </Flex.RowCenter>
+    <section className="h-[90px] w-[584px]">
+      <Flex.RowCenter className="h-full gap-3 bg-white p-[12px]">
+        <p className="font-black">@</p>
+        <input
+          type="text"
+          className="flex-1 text-[24px] font-light"
+          placeholder="입력해주세요..."
+        />
+      </Flex.RowCenter>
+    </section>
   );
 }
 
@@ -94,11 +97,11 @@ function SignConfirmButton() {
 export default function Signup() {
   return (
     <Flex.RowCenter className="h-screen">
-      <Flex.ColCenter className="bg-primary h-full gap-[30px]">
+      <Flex.ColCenter className="h-full gap-[30px] bg-primary">
         <Terms heading={TERMS_OF_SERVICE1} content={TERMS_OF_CONTENT1} />
         <Terms heading={TERMS_OF_SERVICE2} content={TERMS_OF_CONTENT2} />
       </Flex.ColCenter>
-      <Flex.ColCenter className="bg-background_light h-full">
+      <Flex.ColCenter className="h-full bg-background_light">
         <SignFormContainer />
       </Flex.ColCenter>
     </Flex.RowCenter>
