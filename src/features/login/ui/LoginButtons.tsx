@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Flex } from "../../../shared/ui";
 import { Icon } from "../../../shared/icon/icon";
 import Image from "next/image";
@@ -9,8 +9,22 @@ type snsTypes = "google" | "naver" | "kakao";
 
 const LoginButtons = () => {
   const handleLogin = (snsType: snsTypes) => {
-    return alert(snsType);
+    switch (snsType) {
+      case "google":
+        const data = getLoginStatus();
+        console.log(data);
+        break;
+
+      default:
+        alert(snsType);
+        break;
+    }
   };
+
+  const getLoginStatus = async (): Promise<any> => {
+    await fetch("/features/login/api");
+  };
+
   return (
     <Flex.ColCenter className="gap-4">
       <button
@@ -34,6 +48,7 @@ const LoginButtons = () => {
           alt={"google_login"}
         />
       </button>
+      <div className="g-signin2" data-onsuccess="onSignIn"></div>
       <button
         className="flex h-[78px] w-[366px] items-center justify-center gap-4 rounded-lg bg-[#FEE500] p-4 text-2xl"
         onClick={() => {
