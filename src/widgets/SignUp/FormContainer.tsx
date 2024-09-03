@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import { Flex } from "@/shared/ui";
 import {
-  Title,
+  SignUpTitle,
   CheckInput,
-  Input,
+  NicknameInput,
   ConfirmButton,
   fetchConfirmNickname,
   RecommendNicknameButton,
@@ -70,11 +70,11 @@ export default function FormContainer() {
   return (
     <div className="h-[760px] w-[840px] bg-background_grey pt-[205px]">
       <Flex.ColCenter className="w-[584px] gap-[95px]">
-        <Title />
+        <SignUpTitle />
         <RecommendNicknameButton {...{ handleClickRecommend }} />
         <div className="w-[584px]">
           <Flex.ColCenter className="gap-[60px]">
-            <Input {...{ nickname, onChangeHandler }} />
+            <NicknameInput {...{ nickname, onChangeHandler }} />
             <p>{isValid ? "사용 가능" : "사용 불가능"}</p>
 
             <Flex.ColEnd>

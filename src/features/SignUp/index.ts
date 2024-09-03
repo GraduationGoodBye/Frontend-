@@ -1,7 +1,7 @@
-export { default as Input } from "./ui/Input";
 export { default as Terms } from "./ui/Terms";
-export { default as Title } from "./ui/Title";
 export { default as CheckInput } from "./ui/CheckInput";
+export { default as NicknameInput } from "./ui/NicknameInput";
+export { default as SignUpTitle } from "./ui/SignUpTitle";
 export { default as ConfirmButton } from "./ui/ConfirmButton";
 export { default as RecommendNicknameButton } from "./ui/RecommendNicknameButton";
 

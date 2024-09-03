@@ -6,7 +6,7 @@ interface Props {
   onChangeHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function Input({ nickname, onChangeHandler }: Props) {
+export default function NicknameInput({ nickname, onChangeHandler }: Props) {
   return (
     <section className="h-[90px] w-[584px]">
       <Flex.RowCenter className="h-full gap-3 bg-white p-[12px]">
