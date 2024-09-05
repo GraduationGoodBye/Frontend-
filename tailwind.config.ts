@@ -9,10 +9,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        background_grey: "#D9D9D9",
+        background_light: "#F5eae3",
+        primary: "#DD4E24",
+        secondary: "#c4b960",
+      },
+      fontFamily: {
+        super: ["Supernormal"],
       },
     },
   },
