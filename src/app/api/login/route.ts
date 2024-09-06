@@ -1,12 +1,5 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import { NextRequest, NextResponse } from "next/server";
-
-export interface LoginResponseType {
-  code: string;
-  message: string;
-  data: { [key: string]: string } | string;
-}
+import { NextRequest } from "next/server";
+import { LoginResponseType } from "../../../shared/types/authType";
 
 export async function GET(request: NextRequest) {
   const authCode = request.nextUrl.searchParams.get("code");
@@ -20,7 +13,6 @@ export async function GET(request: NextRequest) {
   });
 
   const data: LoginResponseType = await response.json();
-  console.log("ㅁㅁㅁㅁㅁㅁ : ", data); // 응답 데이터 로그
 
   return Response.json({ data });
 }
