@@ -4,15 +4,20 @@ import React, { useEffect } from "react";
 import { Flex } from "../../../shared/ui";
 import { Icon } from "../../../shared/icon/icon";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 type snsTypes = "google" | "naver" | "kakao";
 
 const LoginButtons = () => {
+  const router = useRouter();
+  const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+  const redirectUrl = process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI;
+  const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUrl}&response_type=code&scope=email profile`;
+
   const handleLogin = (snsType: snsTypes) => {
     switch (snsType) {
       case "google":
-        const data = getLoginStatus();
-        console.log(data);
+        window.location.href = googleAuthUrl;
         break;
 
       default:
@@ -48,7 +53,6 @@ const LoginButtons = () => {
           alt={"google_login"}
         />
       </button>
-      <div className="g-signin2" data-onsuccess="onSignIn"></div>
       <button
         className="flex h-[78px] w-[366px] items-center justify-center gap-4 rounded-lg bg-[#FEE500] p-4 text-2xl"
         onClick={() => {
